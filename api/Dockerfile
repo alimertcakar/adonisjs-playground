@@ -15,4 +15,5 @@ RUN npm i -g pm2
 COPY . .
 EXPOSE 3333
 # CMD npx ts-node-dev ./src/index.ts
-CMD npm run pm2:start
+# CMD npm run pm2:start
+CMD npm run dev

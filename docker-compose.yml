@@ -1,31 +1,30 @@
 version: "3"
 services:
   database:
-    image: "postgres" # use latest official postgres version
+    image: "postgres"
     env_file:
-      - database.env # configure postgres
+      - database.env
     volumes:
-      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
   docker-adonis-api:
     image: docker-adonis-api
     container_name: docker-adonis-api
     restart: unless-stopped
-
-    # We specify the image for this service and where we can build that image from
     build:
-      context: ./services/api
+      context: ./api
       dockerfile: Dockerfile
-
-    # We can use these volumes to specify where we want our files to be accessible at.
-    # It's best to house all node modules on a separate volume
-    volumes:
-      - "./services/api:/usr/src/services/api"
-      - "./services/api/node_modules"
     ports:
-      - "1379:3333"
-
+      - "3333:3333"
     # For Windows, we need to enable Chokidar polling so our file changes reflect in real-time.
     environment:
       - CHOKIDAR_USEPOLLING=1
+    networks:
+      - app-network
 volumes:
-  database-data: # named volumes can be managed easier using docker-compose
+  database-data: # named volumes can be managed easier using docker-composedocke
+networks:
+  app-network:

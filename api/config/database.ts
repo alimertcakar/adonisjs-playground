@@ -36,11 +36,11 @@ const databaseConfig: DatabaseConfig = {
     pg: {
       client: 'pg',
       connection: {
-        host: Env.get('PG_HOST'),
-        port: Env.get('PG_PORT'),
-        user: Env.get('PG_USER'),
-        password: Env.get('PG_PASSWORD', ''),
-        database: Env.get('PG_DB_NAME'),
+        host: Env.get('PG_HOST', 'database'),
+        port: Env.get('PG_PORT', 5432),
+        user: Env.get('PG_USER', 'user'),
+        password: Env.get('PG_PASSWORD', 'pass'),
+        database: Env.get('PG_DB_NAME', 'adonis'),
       },
       migrations: {
         naturalSort: true,
@@ -48,8 +48,7 @@ const databaseConfig: DatabaseConfig = {
       healthCheck: false,
       debug: false,
     },
-
-  }
+  },
 }
 
 export default databaseConfig
