@@ -2,7 +2,7 @@
 import User from 'App/Models/User'
 
 export default class UsersController {
-  public async index({ request, response }) {
+  public async index() {
     const user = new User()
 
     // Assign username and email
