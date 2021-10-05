@@ -6,6 +6,7 @@
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
     "start": "node server.js",
+    "pm2:start": "pm2 start server.js",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
   },
