@@ -25,8 +25,8 @@ services:
     networks:
       - app-network
     volumes:
-      - ./api:/src
-      - ./api/node_modules:/src/node_modules
+      - ./api:/usr/src/services/api
+      # - ./api/node_modules:/src/node_modules
 volumes:
   database-data:
   # nodemodules:
