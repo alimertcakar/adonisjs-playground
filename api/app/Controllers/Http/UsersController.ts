@@ -13,6 +13,6 @@ export default class UsersController {
     // await user.save()
 
     // console.log(user.$isPersisted) // true
-    return { selam: 'dünya' }
+    return { selam: 'dünya!' }
   }
 }
