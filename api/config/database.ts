@@ -19,7 +19,7 @@ const databaseConfig: DatabaseConfig = {
   | file.
   |
   */
-  connection: Env.get('DB_CONNECTION'),
+  connection: Env.get('DB_CONNECTION', 'pg'),
 
   connections: {
     /*
@@ -36,7 +36,7 @@ const databaseConfig: DatabaseConfig = {
     pg: {
       client: 'pg',
       connection: {
-        host: Env.get('PG_HOST', 'localhost'),
+        host: Env.get('PG_HOST', 'database'), // localhost for localhost dev,  service name "database" as in docker-compose for working with docker
         port: Env.get('PG_PORT', 5432),
         user: Env.get('PG_USER', 'user'),
         password: Env.get('PG_PASSWORD', 'pass'),

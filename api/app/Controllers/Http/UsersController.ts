@@ -15,16 +15,8 @@ export default class UsersController {
 
     // console.log(user.$isPersisted) // true
 
-    try {
-      // const userList = await User.all();
-      const users = await Database.query().from('user_account').select('*');
+    const userList = await User.all();
 
-      console.log(users, 'users');
-      // console.log(userList, 'userList');
-    } catch (e) {
-      console.log(e, 'error');
-    }
-
-    return { selam: 'running container!!' };
+    return { selam: userList };
   }
 }
