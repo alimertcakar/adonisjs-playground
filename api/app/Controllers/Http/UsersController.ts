@@ -3,16 +3,16 @@ import User from 'App/Models/User'
 
 export default class UsersController {
   public async index() {
-    const user = new User()
+    // const user = new User()
 
-    // Assign username and email
-    user.username = 'virk'
-    user.email = 'virk@adonisjs.com'
+    // // Assign username and email
+    // user.username = 'virk'
+    // user.email = 'virk@adonisjs.com'
 
-    // Insert to the database
-    await user.save()
+    // // Insert to the database
+    // await user.save()
 
-    console.log(user.$isPersisted) // true
+    // console.log(user.$isPersisted) // true
     return { selam: 'dünya' }
   }
 }
