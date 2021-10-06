@@ -18,6 +18,7 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
+import Route from '@ioc:Adonis/Core/Route';
 
-Route.get('/', 'UsersController.index')
+Route.get('/', 'UsersController.index');
+Route.post('/', 'UsersController.addUser');
