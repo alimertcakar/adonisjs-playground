@@ -10,7 +10,7 @@ export default class UsersController {
 
   public async addUser() {
     const user = new User();
-    user.fullName = 'Ali Mert Çakar';
+    user.fullname = 'Ali Mert Çakar';
     await user.save();
 
     return { ok: true };
