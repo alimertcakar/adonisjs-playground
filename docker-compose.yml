@@ -1,6 +1,3 @@
-# app/src volume + chokidar_usepolling is required to work in windows env, i disabled it for faster code reloading.
-# if you wish to work in windows env, uncomment them. otherwise attach to running container with vscode.
-
 version: "3"
 services:
   database:
@@ -22,13 +19,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3333:3333"
-    # environment:
-    # for windows
-    # - CHOKIDAR_USEPOLLING=1
+    environment:
+      # for windows
+      - CHOKIDAR_USEPOLLING=1
     networks:
       - app-network
-    # volumes:
-    # - ./api:/usr/src/services/api
+    volumes:
+      - ./api:/usr/src/services/api
     # - ./api/node_modules:/src/node_modules
 volumes:
   database-data:
