@@ -17,7 +17,7 @@ export default class UsersController {
 
     try {
       // const userList = await User.all();
-      const users = await Database.query().from('users').select('*');
+      const users = await Database.query().from('user_account').select('*');
 
       console.log(users, 'users');
       // console.log(userList, 'userList');
