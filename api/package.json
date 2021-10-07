@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ace serve --watch",
+    "dev": "node ace serve --watch -p",
     "build": "node ace build --production",
     "start": "node server.js",
     "pm2:start": "pm2 start server.js",
