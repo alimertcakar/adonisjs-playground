@@ -21,7 +21,7 @@ services:
       - "3333:3333"
     environment:
       # for windows
-      - CHOKIDAR_USEPOLLING=1
+      - CHOKIDAR_USEPOLLING=2000
     networks:
       - app-network
     volumes:
