@@ -19,13 +19,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3333:3333"
-    environment:
+    # environment:
       # for windows
-      - CHOKIDAR_USEPOLLING=2000
+      # - CHOKIDAR_USEPOLLING=2000
     networks:
       - app-network
-    volumes:
-      - ./api:/usr/src/services/api
+    # volumes:
+      # - ./api:/usr/src/services/api
     # - ./api/node_modules:/src/node_modules
 volumes:
   database-data:
