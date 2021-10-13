@@ -1,34 +1,33 @@
 version: "3"
 services:
-  database: {
-    image: "postgres",
+  database:
+    image: "postgres"
     env_file:
-      - database.env,
+      - database.env
     volumes:
-      - database-data:/var/lib/postgresql/data/,
+      - database-data:/var/lib/postgresql/data/
     ports:
-      - "5432:5432",
+      - "5432:5432"
     networks:
-      - app-network,
-  }
-  docker-adonis-api: {
-    image: docker-adonis-api,
-    container_name: docker-adonis-api,
-    restart: unless-stopped,
+      - app-network
+  docker-adonis-api:
+    image: docker-adonis-api
+    container_name: docker-adonis-api
+    restart: unless-stopped
     build:
       context: ./api,
-      dockerfile: Dockerfile,
+      dockerfile: Dockerfile
     ports:
-      - "3333:3333",
+      - "3333:3333"
     # environment:
-      # for windows
-      # - CHOKIDAR_USEPOLLING=2000
+    # for windows
+    # - CHOKIDAR_USEPOLLING=2000
     networks:
-      - app-network,
+      - app-network
     # volumes:
-      # - ./api:/usr/src/services/api
+    # - ./api:/usr/src/services/api
     # - ./api/node_modules:/src/node_modules
-  }
+
 volumes:
   database-data:
   # nodemodules:
